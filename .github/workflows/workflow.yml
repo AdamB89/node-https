@@ -1,0 +1,16 @@
+name: Example Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      input1:
+        description: 'Input 1'
+        required: true
+        type: string
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input
+        run: echo "Input 1 is ${{ github.event.inputs.input1 }}"
